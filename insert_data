@@ -1,0 +1,56 @@
+<%-- 
+    Document   : insert_data
+    Created on : Dec 27, 2022, 11:29:56 AM
+    Author     : User
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, intial scale=1.0">
+        <script>
+            function valid(){
+                if (document.form1.name.value.length === 0){
+                    alert("Please enter your name");
+                    return(false);
+                }
+                if (document.form1.ic.value.length === 0){
+                    alert("Please enter your ic number");
+                    return(false);
+                }
+                if (document.form1.gender.value.length === 0){
+                    alert("Please enter your gender");
+                    return(false);
+                }
+            }
+        </script>
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <form action="process.jsp" name="form1" >
+            <table style="border:black solid 2px">
+                <tr>
+                    <td colspan="3" style="text-decoration: underline">
+                        McDonald Order System
+                    </td>
+                </tr>
+                <tr>
+                    <td> Name </td><td>:</td>
+                    <td><input type="text" name="name" placeholder="Enter name">
+                </tr>
+                <tr>
+                    <td> Identification Number</td><td>:</td>
+                    <td><input type="text" name="ic" placeholder="Enter your ic number"
+                </tr>
+                <tr>
+                    <td> Gender</td><td>:</td>
+                    <td><input type="text" name="gender" placeholder="Enter your gender"
+                </tr>
+                <td colspan="3" align="center">
+                    <button type="submit" name="submit" value="Submit" onclick="return(valid())">Submit</button>
+            </table>
+        </form>
+    </body>
+</html>
